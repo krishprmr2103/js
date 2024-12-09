@@ -1,0 +1,80 @@
+// js has 4 Pillars of DOM
+
+// 1. selecting of an element
+// 2.changing html
+// 3.changing css
+// 4.event listener
+
+for exp :
+
+// 1,2,3
+var a= document.querySelector('h1');
+console.log(a)
+
+// const fun =()=>{
+
+//     a.innerText="hey !"
+//     a.style.color='blue'
+//     a.style.backgroundColor='white'//js in doesn't used the '-' so use the cammle case(capital latter)
+// }
+
+// 4 event listner :
+
+a.addEventListener('click',function(){
+    a.innerText='hey !'
+})
+a.addEventListener('dblclick',function(){
+    a.innerText='hellow !'
+})
+// ----------------------------------------------------------------------------------
+// project : bulb on off based on the above topic
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice of dom</title>
+    <style>
+        .bulb{
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+             border:2px solid black;
+             
+            /* background-color: yellow; */
+        }
+        button{
+            padding: 10px;
+            font-size: 20px;
+            margin: 80px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="bulb">
+
+    </div>
+    <button>on</button>
+    <script src="practice.js"></script>
+    <script>
+        var bulb= document.querySelector('.bulb')
+var btn= document.querySelector('button')
+ var flag=0
+btn.addEventListener('click',function(){
+    if(flag==0){
+        bulb.style.backgroundColor='rgba(250, 200, 100, .788)'
+        console.log('clicked')
+        flag=1
+        btn.innerText='off'
+    }else{
+        bulb.style.backgroundColor='transparent'
+        console.log('Again Clicked')
+        flag =0
+        btn.innerText='on'
+    }
+})  
+    </script>
+</body>
+</html>
+
